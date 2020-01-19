@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'cli_key_fetcher'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.date        = '2017-12-14'
   s.summary     = "A common library to capture keys and secret kes on the command line"
   s.description = "CLI Key Fetcher"
