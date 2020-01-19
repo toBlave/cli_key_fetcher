@@ -2,13 +2,17 @@ require 'active_support/all'
 require 'io/console'
 
 class CLIKeyFetcher
-  def initialize(cli_description = "API Key", secret_key_required = false, env_key = nil)
+  def initialize(cli_description = "API Key", secret_key_required = false, env_key = nil, secret_key_env_key = nil)
     @secret_key_required = secret_key_required
     @cli_description = cli_description
 
     if(env_key && ENV[env_key])
       @key = ENV[env_key]
       split_key_and_secret
+    end
+
+    if(secret_key_required && secret_key_env_key && ENV[secret_key_env_key])
+      @secret_key = ENV[secret_key_env_key]
     end
   end
 
